@@ -1,5 +1,7 @@
 .setting/*
 .classpath
+/target/*
+/setting/*
 target/*
 target/
 target
