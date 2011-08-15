@@ -1,0 +1,522 @@
+diff --git a/com.ColorQRCode.server/.classpath b/com.ColorQRCode.server/.classpath
+index 097d49d..c7a68f7 100644
+--- a/com.ColorQRCode.server/.classpath
++++ b/com.ColorQRCode.server/.classpath
+@@ -1,15 +1,15 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <classpath>
+-	<classpathentry kind="src" path="src/main/java"/>
+-	<classpathentry kind="src" path="src/main/resources"/>
+-	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
+-	<classpathentry kind="src" output="target/test-classes" path="src/test/resources"/>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
++	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
++	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources"/>
++	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources"/>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+ 	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER">
+ 		<attributes>
+ 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+ 		</attributes>
+ 	</classpathentry>
+-	<classpathentry kind="lib" path="C:/Documents and Settings/kotaro/바탕 화면/COLOR QR CODE PROJECT REPOSITORY/ZXing-1.7/zxing/core/target/core-1.6-SNAPSHOT.jar"/>
++	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
++	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/com.ColorQRCode.server/.project b/com.ColorQRCode.server/.project
+index a4e4d76..effc090 100644
+--- a/com.ColorQRCode.server/.project
++++ b/com.ColorQRCode.server/.project
+@@ -3,7 +3,6 @@
+ 	<name>com.ColorQRCode.server</name>
+ 	<comment></comment>
+ 	<projects>
+-		<project>Servers</project>
+ 	</projects>
+ 	<buildSpec>
+ 		<buildCommand>
+@@ -12,22 +11,17 @@
+ 			</arguments>
+ 		</buildCommand>
+ 		<buildCommand>
+-			<name>org.eclipse.ajdt.core.ajbuilder</name>
+-			<arguments>
+-			</arguments>
+-		</buildCommand>
+-		<buildCommand>
+ 			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+ 			<arguments>
+ 			</arguments>
+ 		</buildCommand>
+ 		<buildCommand>
+-			<name>org.eclipse.wst.validation.validationbuilder</name>
++			<name>org.eclipse.ajdt.core.ajbuilder</name>
+ 			<arguments>
+ 			</arguments>
+ 		</buildCommand>
+ 		<buildCommand>
+-			<name>org.springframework.ide.eclipse.core.springbuilder</name>
++			<name>org.eclipse.wst.validation.validationbuilder</name>
+ 			<arguments>
+ 			</arguments>
+ 		</buildCommand>
+@@ -40,12 +34,10 @@
+ 	<natures>
+ 		<nature>org.eclipse.ajdt.ui.ajnature</nature>
+ 		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
++		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
+ 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+-		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+ 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+-		<nature>org.springframework.ide.eclipse.core.springnature</nature>
+-		<nature>com.springsource.sts.roo.core.nature</nature>
+-		<nature>org.maven.ide.eclipse.maven2Nature</nature>
+ 	</natures>
+ </projectDescription>
+diff --git a/com.ColorQRCode.server/.settings/org.eclipse.ajdt.core.prefs b/com.ColorQRCode.server/.settings/org.eclipse.ajdt.core.prefs
+index ec24aa6..4468eff 100644
+--- a/com.ColorQRCode.server/.settings/org.eclipse.ajdt.core.prefs
++++ b/com.ColorQRCode.server/.settings/org.eclipse.ajdt.core.prefs
+@@ -1,4 +1,4 @@
+-#Thu Jul 28 15:00:47 KST 2011
++#Mon Aug 15 14:16:39 KST 2011
+ eclipse.preferences.version=1
+ org.aspectj.ajdt.core.compiler.BuildOptions.showweavemessages=false
+ org.aspectj.ajdt.core.compiler.lint.BrokeSerialVersionCompatibility=ignore
+diff --git a/com.ColorQRCode.server/.settings/org.eclipse.jdt.core.prefs b/com.ColorQRCode.server/.settings/org.eclipse.jdt.core.prefs
+index 9ec44e3..196225e 100644
+--- a/com.ColorQRCode.server/.settings/org.eclipse.jdt.core.prefs
++++ b/com.ColorQRCode.server/.settings/org.eclipse.jdt.core.prefs
+@@ -1,12 +1,9 @@
+-#Tue Mar 17 10:00:21 EDT 2009
++#Mon Aug 15 14:16:40 KST 2011
+ eclipse.preferences.version=1
+ org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+-org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
+-org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
+-org.eclipse.jdt.core.compiler.compliance=1.5
+-org.eclipse.jdt.core.compiler.debug.lineNumber=generate
+-org.eclipse.jdt.core.compiler.debug.localVariable=generate
+-org.eclipse.jdt.core.compiler.debug.sourceFile=generate
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
++org.eclipse.jdt.core.compiler.compliance=1.6
+ org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+ org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+-org.eclipse.jdt.core.compiler.source=1.5
++org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
++org.eclipse.jdt.core.compiler.source=1.6
+diff --git a/com.ColorQRCode.server/.settings/org.eclipse.jst.common.project.facet.core.prefs b/com.ColorQRCode.server/.settings/org.eclipse.jst.common.project.facet.core.prefs
+deleted file mode 100644
+index 763a150..0000000
+--- a/com.ColorQRCode.server/.settings/org.eclipse.jst.common.project.facet.core.prefs
++++ /dev/null
+@@ -1,3 +0,0 @@
+-#Tue Mar 17 09:59:19 EDT 2009
+-classpath.helper/org.eclipse.jdt.launching.JRE_CONTAINER\:\:org.eclipse.jdt.internal.launching.macosx.MacOSXType\:\:JVM\ 1.5.0\ (MacOS\ X\ Default)/owners=jst.java\:5.0
+-eclipse.preferences.version=1
+diff --git a/com.ColorQRCode.server/.settings/org.eclipse.wst.common.component b/com.ColorQRCode.server/.settings/org.eclipse.wst.common.component
+index 2d4daef..1455938 100644
+--- a/com.ColorQRCode.server/.settings/org.eclipse.wst.common.component
++++ b/com.ColorQRCode.server/.settings/org.eclipse.wst.common.component
+@@ -1,10 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project-modules id="moduleCoreId" project-version="1.5.0">
+-	<wb-module deploy-name="com.ColorQRCode.server">
+-		<wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+-		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+-		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+-		<property name="java-output-path" value="target/classes"/>
+-		<property name="context-root" value="com.ColorQRCode.server"/>
+-	</wb-module>
++    <wb-module deploy-name="com.ColorQRCode.server">
++        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
++        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
++        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
++        <property name="java-output-path" value="/com.ColorQRCode.server/target/classes"/>
++        <property name="context-root" value="com.ColorQRCode.server"/>
++    </wb-module>
+ </project-modules>
+diff --git a/com.ColorQRCode.server/.settings/org.eclipse.wst.common.project.facet.core.xml b/com.ColorQRCode.server/.settings/org.eclipse.wst.common.project.facet.core.xml
+index d24a733..9f1491f 100644
+--- a/com.ColorQRCode.server/.settings/org.eclipse.wst.common.project.facet.core.xml
++++ b/com.ColorQRCode.server/.settings/org.eclipse.wst.common.project.facet.core.xml
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <faceted-project>
+-  <fixed facet="jst.web"/>
+-  <fixed facet="jst.java"/>
+-  <installed facet="jst.java" version="5.0"/>
++  <fixed facet="wst.jsdt.web"/>
++  <installed facet="java" version="1.6"/>
+   <installed facet="jst.web" version="2.5"/>
++  <installed facet="wst.jsdt.web" version="1.0"/>
+ </faceted-project>
+diff --git a/com.ColorQRCode.server/src/main/webapp/WEB-INF/web.xml b/com.ColorQRCode.server/src/main/webapp/WEB-INF/web.xml
+index b6cc56c..208e980 100644
+--- a/com.ColorQRCode.server/src/main/webapp/WEB-INF/web.xml
++++ b/com.ColorQRCode.server/src/main/webapp/WEB-INF/web.xml
+@@ -1,33 +1,23 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+-
+-	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+-	<context-param>
+-		<param-name>contextConfigLocation</param-name>
+-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+-	</context-param>
+-	
+-	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+-	<listener>
+-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+-	</listener>
+-
+-	<!-- Processes application requests -->
+-	<servlet>
+-		<servlet-name>appServlet</servlet-name>
+-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+-		<init-param>
+-			<param-name>contextConfigLocation</param-name>
+-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+-		</init-param>
+-		<load-on-startup>1</load-on-startup>
+-	</servlet>
+-		
+-	<servlet-mapping>
+-		<servlet-name>appServlet</servlet-name>
+-		<url-pattern>/</url-pattern>
+-	</servlet-mapping>
+-
+-</web-app>
++<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
++  <context-param>
++    <param-name>contextConfigLocation</param-name>
++    <param-value>/WEB-INF/spring/root-context.xml</param-value>
++  </context-param>
++  <listener>
++    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
++  </listener>
++  <servlet>
++    <servlet-name>appServlet</servlet-name>
++    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
++    <init-param>
++      <param-name>contextConfigLocation</param-name>
++      <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
++    </init-param>
++    <load-on-startup>1</load-on-startup>
++  </servlet>
++  <servlet-mapping>
++    <servlet-name>appServlet</servlet-name>
++    <url-pattern>/</url-pattern>
++  </servlet-mapping>
++</web-app>
+\ No newline at end of file
+diff --git a/com.ColorQRCode.server/target/classes/builddef.lst b/com.ColorQRCode.server/target/classes/builddef.lst
+index 7d0af16..550eb99 100644
+--- a/com.ColorQRCode.server/target/classes/builddef.lst
++++ b/com.ColorQRCode.server/target/classes/builddef.lst
+@@ -4,7 +4,7 @@
+ -target
+ 1.6
+ -classpath
+-C:\Documents and Settings\kotaro\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\Documents and Settings\kotaro\.m2\repository\junit\junit\4.7\junit-4.7.jar;C:\Documents and Settings\kotaro\.m2\repository\log4j\log4j\1.2.15\log4j-1.2.15.jar;C:\Documents and Settings\kotaro\.m2\repository\org\aspectj\aspectjrt\1.6.9\aspectjrt-1.6.9.jar;C:\Documents and Settings\kotaro\.m2\repository\org\slf4j\jcl-over-slf4j\1.5.10\jcl-over-slf4j-1.5.10.jar;C:\Documents and Settings\kotaro\.m2\repository\org\slf4j\slf4j-api\1.5.10\slf4j-api-1.5.10.jar;C:\Documents and Settings\kotaro\.m2\repository\org\slf4j\slf4j-log4j12\1.5.10\slf4j-log4j12-1.5.10.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-aop\3.0.4.RELEASE\spring-aop-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-asm\3.0.4.RELEASE\spring-asm-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-beans\3.0.4.RELEASE\spring-beans-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-context\3.0.4.RELEASE\spring-context-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-context-support\3.0.4.RELEASE\spring-context-support-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-core\3.0.4.RELEASE\spring-core-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-expression\3.0.4.RELEASE\spring-expression-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-web\3.0.4.RELEASE\spring-web-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-webmvc\3.0.4.RELEASE\spring-webmvc-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\roo\org.springframework.roo.annotations\1.0.2.RELEASE\org.springframework.roo.annotations-1.0.2.RELEASE.jar;C:\Documents and Settings\kotaro\Documents\workspace-sts-2.6.0.RELEASE1\com.ColorQRCode.server\target\classes
++C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\Administrator\.m2\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\Users\Administrator\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;C:\Users\Administrator\.m2\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\Users\Administrator\.m2\repository\junit\junit\4.7\junit-4.7.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.15\log4j-1.2.15.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.6.9\aspectjrt-1.6.9.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.5.10\jcl-over-slf4j-1.5.10.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.5.10\slf4j-api-1.5.10.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-log4j12\1.5.10\slf4j-log4j12-1.5.10.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\3.0.4.RELEASE\spring-aop-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-asm\3.0.4.RELEASE\spring-asm-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\3.0.4.RELEASE\spring-beans-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\3.0.4.RELEASE\spring-context-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\3.0.4.RELEASE\spring-context-support-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\3.0.4.RELEASE\spring-core-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\3.0.4.RELEASE\spring-expression-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-web\3.0.4.RELEASE\spring-web-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-webmvc\3.0.4.RELEASE\spring-webmvc-3.0.4.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\roo\org.springframework.roo.annotations\1.0.2.RELEASE\org.springframework.roo.annotations-1.0.2.RELEASE.jar;D:\06. Git\TestProject\com.ColorQRCode.server\target\classes
+ -d
+-C:\Documents and Settings\kotaro\Documents\workspace-sts-2.6.0.RELEASE1\com.ColorQRCode.server\target\classes
+-C:\Documents and Settings\kotaro\Documents\workspace-sts-2.6.0.RELEASE1\com.ColorQRCode.server\src\main\java\com\ColorQRCode\server\HomeController.java
++D:\06. Git\TestProject\com.ColorQRCode.server\target\classes
++D:\06. Git\TestProject\com.ColorQRCode.server\src\main\java\com\ColorQRCode\server\HomeController.java
+diff --git a/com.ColorQRCode.server/target/classes/com/ColorQRCode/server/HomeController.class b/com.ColorQRCode.server/target/classes/com/ColorQRCode/server/HomeController.class
+index 4e9dc36..758a613 100644
+Binary files a/com.ColorQRCode.server/target/classes/com/ColorQRCode/server/HomeController.class and b/com.ColorQRCode.server/target/classes/com/ColorQRCode/server/HomeController.class differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/META-INF/aop-ajc.xml b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/META-INF/aop-ajc.xml
+deleted file mode 100644
+index d2d7ed1..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/META-INF/aop-ajc.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<aspectj>
+-<aspects>
+-</aspects>
+-</aspectj>
+-
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/builddef.lst b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/builddef.lst
+deleted file mode 100644
+index 7d0af16..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/builddef.lst
++++ /dev/null
+@@ -1,10 +0,0 @@
+--outxml
+--source
+-1.6
+--target
+-1.6
+--classpath
+-C:\Documents and Settings\kotaro\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;C:\Documents and Settings\kotaro\.m2\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\Documents and Settings\kotaro\.m2\repository\junit\junit\4.7\junit-4.7.jar;C:\Documents and Settings\kotaro\.m2\repository\log4j\log4j\1.2.15\log4j-1.2.15.jar;C:\Documents and Settings\kotaro\.m2\repository\org\aspectj\aspectjrt\1.6.9\aspectjrt-1.6.9.jar;C:\Documents and Settings\kotaro\.m2\repository\org\slf4j\jcl-over-slf4j\1.5.10\jcl-over-slf4j-1.5.10.jar;C:\Documents and Settings\kotaro\.m2\repository\org\slf4j\slf4j-api\1.5.10\slf4j-api-1.5.10.jar;C:\Documents and Settings\kotaro\.m2\repository\org\slf4j\slf4j-log4j12\1.5.10\slf4j-log4j12-1.5.10.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-aop\3.0.4.RELEASE\spring-aop-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-asm\3.0.4.RELEASE\spring-asm-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-beans\3.0.4.RELEASE\spring-beans-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-context\3.0.4.RELEASE\spring-context-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-context-support\3.0.4.RELEASE\spring-context-support-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-core\3.0.4.RELEASE\spring-core-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-expression\3.0.4.RELEASE\spring-expression-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-web\3.0.4.RELEASE\spring-web-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\spring-webmvc\3.0.4.RELEASE\spring-webmvc-3.0.4.RELEASE.jar;C:\Documents and Settings\kotaro\.m2\repository\org\springframework\roo\org.springframework.roo.annotations\1.0.2.RELEASE\org.springframework.roo.annotations-1.0.2.RELEASE.jar;C:\Documents and Settings\kotaro\Documents\workspace-sts-2.6.0.RELEASE1\com.ColorQRCode.server\target\classes
+--d
+-C:\Documents and Settings\kotaro\Documents\workspace-sts-2.6.0.RELEASE1\com.ColorQRCode.server\target\classes
+-C:\Documents and Settings\kotaro\Documents\workspace-sts-2.6.0.RELEASE1\com.ColorQRCode.server\src\main\java\com\ColorQRCode\server\HomeController.java
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/ColorQRCode/server/HomeController.class b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/ColorQRCode/server/HomeController.class
+deleted file mode 100644
+index f123629..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/ColorQRCode/server/HomeController.class and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/log4j.xml b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/log4j.xml
+deleted file mode 100644
+index 0781538..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/log4j.xml
++++ /dev/null
+@@ -1,41 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+-<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+-
+-	<!-- Appenders -->
+-	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+-		<param name="Target" value="System.out" />
+-		<layout class="org.apache.log4j.PatternLayout">
+-			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+-		</layout>
+-	</appender>
+-	
+-	<!-- Application Loggers -->
+-	<logger name="com.ColorQRCode.server">
+-		<level value="info" />
+-	</logger>
+-	
+-	<!-- 3rdparty Loggers -->
+-	<logger name="org.springframework.core">
+-		<level value="info" />
+-	</logger>
+-	
+-	<logger name="org.springframework.beans">
+-		<level value="info" />
+-	</logger>
+-	
+-	<logger name="org.springframework.context">
+-		<level value="info" />
+-	</logger>
+-
+-	<logger name="org.springframework.web">
+-		<level value="info" />
+-	</logger>
+-
+-	<!-- Root Logger -->
+-	<root>
+-		<priority value="warn" />
+-		<appender-ref ref="console" />
+-	</root>
+-	
+-</log4j:configuration>
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aopalliance-1.0.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aopalliance-1.0.jar
+deleted file mode 100644
+index 578b1a0..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aopalliance-1.0.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aspectjrt-1.6.9.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aspectjrt-1.6.9.jar
+deleted file mode 100644
+index a7efd37..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aspectjrt-1.6.9.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/javax.inject-1.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/javax.inject-1.jar
+deleted file mode 100644
+index b2a9d0b..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/javax.inject-1.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.5.10.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.5.10.jar
+deleted file mode 100644
+index e6e78c0..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.5.10.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar
+deleted file mode 100644
+index 0fd275e..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/log4j-1.2.15.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/log4j-1.2.15.jar
+deleted file mode 100644
+index c930a6a..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/log4j-1.2.15.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-api-1.5.10.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-api-1.5.10.jar
+deleted file mode 100644
+index 9ec867b..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-api-1.5.10.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.5.10.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.5.10.jar
+deleted file mode 100644
+index 32406e2..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.5.10.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-aop-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-aop-3.0.4.RELEASE.jar
+deleted file mode 100644
+index eb71a1b..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-aop-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-asm-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-asm-3.0.4.RELEASE.jar
+deleted file mode 100644
+index 19edb7e..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-asm-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-beans-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-beans-3.0.4.RELEASE.jar
+deleted file mode 100644
+index 0699f6d..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-beans-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-3.0.4.RELEASE.jar
+deleted file mode 100644
+index 6f25f9f..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-support-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-support-3.0.4.RELEASE.jar
+deleted file mode 100644
+index 6e1b389..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-support-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-core-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-core-3.0.4.RELEASE.jar
+deleted file mode 100644
+index 0f1f959..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-core-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-expression-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-expression-3.0.4.RELEASE.jar
+deleted file mode 100644
+index e0252a1..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-expression-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-web-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-web-3.0.4.RELEASE.jar
+deleted file mode 100644
+index ce8f215..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-web-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-webmvc-3.0.4.RELEASE.jar b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-webmvc-3.0.4.RELEASE.jar
+deleted file mode 100644
+index 7b1c264..0000000
+Binary files a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-webmvc-3.0.4.RELEASE.jar and /dev/null differ
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/controllers.xml b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/controllers.xml
+deleted file mode 100644
+index 1563146..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/controllers.xml
++++ /dev/null
+@@ -1,13 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<beans xmlns="http://www.springframework.org/schema/beans"
+-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xmlns:mvc="http://www.springframework.org/schema/mvc"
+-	xmlns:context="http://www.springframework.org/schema/context"
+-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+-
+-	<!-- Scans within the base package of the application for @Components to configure as beans -->
+-	<context:component-scan base-package="com.ColorQRCode.server" />
+-	 
+-</beans>
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml
+deleted file mode 100644
+index 737a46b..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml
++++ /dev/null
+@@ -1,26 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xmlns:beans="http://www.springframework.org/schema/beans"
+-	xsi:schemaLocation="
+-        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+-
+-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+-	
+-	<!-- Enables the Spring MVC @Controller programming model -->
+-	<annotation-driven />
+-
+-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+-	<resources mapping="/resources/**" location="/resources/" />
+-
+-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+-		<beans:property name="prefix" value="/WEB-INF/views/" />
+-		<beans:property name="suffix" value=".jsp" />
+-	</beans:bean>
+-	
+-	<!-- Imports user-defined @Controller beans that process client requests -->
+-	<beans:import resource="controllers.xml" />
+-	
+-</beans:beans>
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml
+deleted file mode 100644
+index c38cdff..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml
++++ /dev/null
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<beans xmlns="http://www.springframework.org/schema/beans"
+-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+-	
+-	<!-- Root Context: defines shared resources visible to all other web components -->
+-		
+-</beans>
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/home.jsp b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/home.jsp
+deleted file mode 100644
+index eb90dc0..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/home.jsp
++++ /dev/null
+@@ -1,31 +0,0 @@
+-
+-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+-<%@ page import="com.google.zxing.qrcode.color.ColorQRCodeWriter" %>
+-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+-
+-<html>
+-<head>
+-	<title>Home</title>
+-</head>
+-<body>
+-
+-<%
+-	ColorQRCodeWriter cq = new ColorQRCodeWriter();
+-	String text = "test1234jasdfkertesr3sertsdr032304";
+-	
+-	BitMatrix[] bitMatrix = cq.encode(text, BarcodeFormat.QR_CODE, 100, 100);
+-	out.clear();
+-	ServletOutputStream outputStream = response.getOutputStream();
+-	for(int i = 0; i<bitMatrix.length(); i++){
+-		MatrixToImageWriter.writeToStream(bitMatrix[i], "png", outputStream);
+-		outputStream.flush();
+-	}
+-	outputStream.close();
+-
+-%>
+-
+-<h1>
+-	Hello world!
+-</h1>
+-</body>
+-</html>
+diff --git a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/web.xml b/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/web.xml
+deleted file mode 100644
+index b6cc56c..0000000
+--- a/com.ColorQRCode.server/target/server-1.0.0-BUILD-SNAPSHOT/WEB-INF/web.xml
++++ /dev/null
+@@ -1,33 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+-
+-	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+-	<context-param>
+-		<param-name>contextConfigLocation</param-name>
+-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+-	</context-param>
+-	
+-	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+-	<listener>
+-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+-	</listener>
+-
+-	<!-- Processes application requests -->
+-	<servlet>
+-		<servlet-name>appServlet</servlet-name>
+-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+-		<init-param>
+-			<param-name>contextConfigLocation</param-name>
+-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+-		</init-param>
+-		<load-on-startup>1</load-on-startup>
+-	</servlet>
+-		
+-	<servlet-mapping>
+-		<servlet-name>appServlet</servlet-name>
+-		<url-pattern>/</url-pattern>
+-	</servlet-mapping>
+-
+-</web-app>
