@@ -1,0 +1,10 @@
+.setting/*
+.classpath
+target/*
+target/
+target
+.setting
+.setting/
+.project
+.springBeans
+log
